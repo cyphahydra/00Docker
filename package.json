@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
+
   "scripts": {
-    "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node --esm src/index.ts --signal SIGINT",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "dev:build": "npm run build",
+    "dev:start": "npm run start",
+    "dev": "nodemon -L --watch src --ext ts --exec \"npm run dev:build && npm run dev:start\""
   },
   "repository": {
     "type": "git",
@@ -15,17 +19,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/cyphahydra/00Docker/issues"
   },
   "homepage": "https://github.com/cyphahydra/00Docker#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
   "devDependencies": {
-    "@types/express": "^5.0.5",
+    "@types/express": "^5.0.6",
     "@types/node": "^24.10.1",
-    "express": "^5.1.0",
     "nodemon": "^3.1.11",
-    "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
 }
