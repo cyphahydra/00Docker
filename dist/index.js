@@ -9,7 +9,7 @@ app.use(express.json());
 //     });
 // });
 app.get('/', (req, res) => {
-    res.send('Hello!!! - Ken news updated ooo no');
+    res.send('Hello!!! - Ken news updated ooo');
 });
 app.listen(PORT, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);

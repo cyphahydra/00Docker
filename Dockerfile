@@ -14,7 +14,9 @@ RUN npm install
 
 # Copy the rest of the application source code
 COPY . .
+ENV PORT="3000"
 
+EXPOSE $PORT
 # Execute the build script defined in package.json (tsc)
 # This generates the compiled JavaScript files in the /app/dist directory
 RUN npm run build
@@ -41,7 +43,7 @@ RUN npm run build
 #COPY --from=builder /app/dist ./dist
 
 # The application runs on a specific port (e.g., 3000, as is common for Node apps)
-EXPOSE 3000
+#EXPOSE 3000
 
 # Command to run the application using the 'start' script
 # This executes: node dist/index.js

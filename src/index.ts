@@ -12,7 +12,7 @@ app.use(express.json());
 //     });
 // });
 app.get('/',(req:Request,res:Response)=>{
-    res.send('Hello!!! - Ken news updated ooo no')
+    res.send('Hello!!! - Ken news updated ooo')
 })
 
 app.listen(PORT, () => {
